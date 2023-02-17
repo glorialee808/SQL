@@ -1,0 +1,44 @@
+/** bakery items:
+ham croissants (2)
+sesame bagels (12)
+blueberry muffins (15)
+chocolate cookies (8)
+macarons (30)
+tiramisu (16)
+flan (10)
+cheese danish (6)
+caprese panini (4) 
+strawberry cupcake (13) 
+chocolate mousse (12)
+raspberry tart (17) 
+coconut pie (6) 
+cinnamon roll (7)
+brownies (9)
+**/ 
+
+CREATE TABLE bakery (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, inventory INTEGER, display TEXT);
+
+INSERT INTO bakery VALUES (1, "ham croissants", 6, 2, "glass case");
+INSERT INTO bakery VALUES (2, "sesame bagels", 3, 12, "shelf");
+INSERT INTO bakery VALUES (3, "blueberry muffins", 4, 15, "shelf");
+INSERT INTO bakery VALUES (4, "chocolate cookies",2, 8, "table");
+INSERT INTO bakery VALUES (5, "macarons", 3.50, 30, "glass case");
+INSERT INTO bakery VALUES (6, "tiramisu", 7.99, 16, "glass case");
+INSERT INTO bakery VALUES (7, "flan", 5.99, 10, "glass case");
+INSERT INTO bakery VALUES (8, "cheese danish", 4.50, 6, "shelf");
+INSERT INTO bakery VALUES (9, "caprese panini", 10.99, 4, "glass case");
+INSERT INTO bakery VALUES (10, "strawberry cupcake", 5, 13, "table");
+INSERT INTO bakery VALUES (11, "chocolate mousse", 7.99, 12, "glass case");
+INSERT INTO bakery VALUES (12, "raspberry tart", 4.99, 17, "shelf");
+INSERT INTO bakery VALUES (13, "coconut pie", 6.99, 6, "glass case");
+INSERT INTO bakery VALUES (14, "cinnamon roll", 5.99, 7, "shelf");
+INSERT INTO bakery VALUES (15, "brownies", 4.99, 9, "table");
+
+SELECT * FROM bakery;
+
+SELECT * FROM bakery ORDER BY price;
+
+SELECT SUM(inventory) FROM bakery GROUP BY display;
+
+SELECT display, SUM (inventory) FROM bakery GROUP BY display;
+
